@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "tamasfe.even-better-toml",
+        "charliermarsh.ruff",
+        "mechatroner.rainbow-csv"
+    ]
+}

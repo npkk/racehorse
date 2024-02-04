@@ -1,0 +1,50 @@
+[project]
+name = "scrape-keiba"
+version = "0.0.1"
+description = "scrape"
+authors = [
+    { name = "npkk", email = "kob4.nemu@gmail.com" }
+]
+dependencies = [
+    "beautifulsoup4>=4.12.2",
+    "pandas>=2.0.3",
+    "requests>=2.31.0",
+    "lxml>=4.9.3",
+    "html5lib>=1.1",
+    "ruff>=0.1.5",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ipython>=8.12.3",
+    "jupyterlab>=4.0.9",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D", # pydocstyle
+    "TD", # flake8-todos
+    "PLR2004", # magic value
+    "G", # logging format
+    "FA102", # union type annotation
+    "EM102", # f-string in exception
+    "TRY0", # throwing vanilla exception
+    "RUF100"
+]
+unfixable = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double" # double-quote
+
+[tool.hatch.metadata]
+allow-direct-references = true
